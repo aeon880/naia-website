@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "naia-website",
-      "runtimeExecutable": "/usr/bin/ruby",
-      "runtimeArgs": ["-run", "-e", "httpd", "/Users/akakkos/Desktop/NAIA Website", "-p", "3456"],
+      "runtimeExecutable": "/usr/local/bin/npx",
+      "runtimeArgs": ["--yes", "serve", "/Users/aimiliakakkou/Desktop/naia-website", "-l", "3456"],
       "port": 3456
     }
   ]
