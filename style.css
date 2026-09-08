@@ -437,9 +437,7 @@ footer {
   padding: clamp(50px,7vw,90px) clamp(20px,5vw,24px) clamp(70px,9vw,110px);
 }
 .legal-section + .legal-section {
-  border-top: 1px solid var(--border);
   margin-top: 32px;
-  padding-top: 32px;
 }
 .legal-content h2 {
   font-family: 'Cormorant Garamond', serif;
@@ -454,6 +452,7 @@ footer {
   font-weight: 300;
   color: var(--mid-grey);
   line-height: 1.9;
+  text-align: justify;
 }
 .legal-content p + p { margin-top: 14px; }
 .legal-content ul {
@@ -467,13 +466,13 @@ footer {
   line-height: 1.9;
 }
 .legal-content a { color: var(--burgundy); border-bottom: 1px solid var(--burgundy); }
-.legal-updated {
+.legal-content p.legal-updated {
   font-family: 'Montserrat', sans-serif;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 300;
   color: var(--mid-grey);
-  text-align: center;
-  margin-bottom: 8px;
+  text-align: left;
+  margin-top: 40px;
 }
 
 /* =============================================
