@@ -360,6 +360,190 @@ footer {
 }
 
 /* =============================================
+   FOOTER — BOTTOM LEGAL BAR
+============================================= */
+.footer-bottom {
+  position: relative;
+  margin-top: 40px;
+  padding-top: 22px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 12px;
+}
+.footer-bottom::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  height: 1px;
+  background: rgba(255,255,255,0.15);
+  transform: translateX(-50%);
+}
+.footer-bottom .footer-copy { margin-top: 0; font-size: 12px; }
+.footer-legal-links {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.4);
+  text-align: right;
+  padding-right: 60px;
+}
+.footer-legal-links a {
+  color: rgba(255,255,255,0.6);
+  transition: color 0.3s ease;
+}
+.footer-legal-links a:hover { color: var(--white); }
+@media (max-width: 600px) {
+  .footer-bottom { grid-template-columns: 1fr; }
+  .footer-legal-links { text-align: left; padding-right: 0; }
+}
+
+/* =============================================
+   LEGAL PAGES (Privacy / Cookies / Terms)
+============================================= */
+.legal-hero {
+  background: var(--light-grey);
+  padding: clamp(110px,14vw,140px) clamp(20px,5vw,80px) clamp(36px,5vw,50px);
+  text-align: center;
+}
+.legal-hero-eyebrow {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.35em;
+  color: var(--burgundy);
+  display: block;
+}
+.legal-hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(34px,5vw,52px);
+  font-weight: 300;
+  color: var(--dark);
+  margin-top: 14px;
+  line-height: 1.1;
+}
+.legal-hero-rule {
+  width: 44px; height: 1px;
+  background: var(--burgundy);
+  margin: 20px auto 0;
+}
+.legal-content {
+  background: var(--white);
+  max-width: 800px;
+  margin: 0 auto;
+  padding: clamp(50px,7vw,90px) clamp(20px,5vw,24px) clamp(70px,9vw,110px);
+}
+.legal-section + .legal-section {
+  border-top: 1px solid var(--border);
+  margin-top: 32px;
+  padding-top: 32px;
+}
+.legal-content h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--dark);
+  margin-bottom: 14px;
+}
+.legal-content p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--mid-grey);
+  line-height: 1.9;
+}
+.legal-content p + p { margin-top: 14px; }
+.legal-content ul {
+  margin: 14px 0 0 20px;
+}
+.legal-content li {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--mid-grey);
+  line-height: 1.9;
+}
+.legal-content a { color: var(--burgundy); border-bottom: 1px solid var(--burgundy); }
+.legal-updated {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  color: var(--mid-grey);
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+/* =============================================
+   COOKIE CONSENT BANNER
+============================================= */
+.cookie-banner {
+  position: fixed;
+  bottom: 0; left: 0;
+  width: 100%;
+  z-index: 9999;
+  background: var(--dark);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 18px;
+  padding: 20px clamp(20px,4vw,60px);
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+}
+.cookie-banner.visible { transform: translateY(0); }
+.cookie-banner-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--white);
+  max-width: 620px;
+}
+.cookie-banner-actions {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+}
+.cookie-btn-accept {
+  background: var(--burgundy);
+  color: var(--white);
+  border: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  padding: 12px 28px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+.cookie-btn-accept:hover { opacity: 0.85; }
+.cookie-btn-learn {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--border);
+  color: var(--border);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  padding: 11px 26px;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+.cookie-btn-learn:hover { border-color: var(--white); color: var(--white); }
+@media (max-width: 600px) {
+  .cookie-banner { flex-direction: column; align-items: flex-start; }
+  .cookie-banner-actions { width: 100%; }
+  .cookie-btn-accept, .cookie-btn-learn { flex: 1; text-align: center; }
+}
+
+/* =============================================
    RESPONSIVE NAV
 ============================================= */
 @media (max-width: 900px) {
